@@ -7,6 +7,6 @@ const articles = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
-<BlogLayout title="i just need a domain">
+<BlogLayout>
   <ArticleList articles={articles} />
 </BlogLayout>
