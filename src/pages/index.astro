@@ -1,0 +1,12 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import ArticleList from '../components/ArticleList.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BlogLayout title="i just need a domain">
+  <ArticleList articles={articles} />
+</BlogLayout>
